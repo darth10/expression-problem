@@ -5,6 +5,7 @@ namespace Extensions
 {
     class Program
     {
+        // TODO add ViewExtensions
         // TODO move to tests
         static void Main(string[] args)
         {
