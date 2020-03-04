@@ -8,7 +8,7 @@ namespace Extensions
     class Program
     {
         // TODO add ViewExtensions
-        // TODO move to tests
+        // TODO move to tests, change to classlib and switch to netstandard2.0
         static void Main(string[] args)
         {
             var c1 = new Const(2);
@@ -25,7 +25,7 @@ namespace Extensions
             Console.WriteLine(a2.Eval());
             Console.WriteLine(m1.Eval());
             Console.WriteLine(m2.Eval());
-            Console.WriteLine(a3.Eval());   // fails
+            Console.WriteLine(a3.Eval());
         }
     }
 }
