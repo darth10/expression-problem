@@ -1,11 +1,11 @@
-﻿namespace Extensions.Implementation.Types
+﻿namespace Extensions.Types
 {
-    public class Mult : IExp
+    public class Add : IExp
     {
         public IExp Left { get; }
         public IExp Right { get; }
 
-        public Mult(IExp left, IExp right) =>
+        public Add(IExp left, IExp right) =>
             (Left, Right) = (left, right);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Extensions.Implementation.Types
+﻿namespace Extensions.Types
 {
     public class Const : IExp
     {

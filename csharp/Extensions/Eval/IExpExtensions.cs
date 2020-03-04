@@ -1,7 +1,7 @@
-using Extensions.Implementation.Types;
+using Extensions.Types;
 using System;
 
-namespace Extensions.Implementation.Eval
+namespace Extensions.Eval
 {
     public static class IExpExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using System;
-using Extensions.Implementation.Types;
-using Extensions.Implementation.MultEval;
+using Extensions.Types;
+using Extensions.MultEval;
 
 namespace Extensions
 {
