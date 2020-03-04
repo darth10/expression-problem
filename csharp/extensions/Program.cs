@@ -1,5 +1,6 @@
 ﻿using System;
-using Extensions.MultEvalExtensions;
+using Extensions.Implementation.Types;
+using Extensions.Implementation.MultEval;
 
 namespace Extensions
 {
@@ -9,8 +10,6 @@ namespace Extensions
         // TODO move to tests
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             var c1 = new Const(2);
             var a1 = new Add(c1, new Const(3));
             var a2 = new Add(new Const(5), a1);
@@ -25,7 +24,7 @@ namespace Extensions
             Console.WriteLine(a2.Eval());
             Console.WriteLine(m1.Eval());
             Console.WriteLine(m2.Eval());
-            Console.WriteLine(a3.Eval()); // fails
+            Console.WriteLine(a3.Eval());   // fails
         }
     }
 }

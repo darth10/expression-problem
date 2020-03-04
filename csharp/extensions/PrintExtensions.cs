@@ -1,4 +1,0 @@
-namespace Extensions.PrintExtensions
-{
-
-}

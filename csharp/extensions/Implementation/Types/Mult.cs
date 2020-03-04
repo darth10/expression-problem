@@ -1,4 +1,4 @@
-namespace Extensions
+﻿namespace Extensions.Implementation.Types
 {
     public class Mult : IExp
     {

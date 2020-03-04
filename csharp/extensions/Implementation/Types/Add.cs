@@ -1,15 +1,5 @@
-namespace Extensions
+﻿namespace Extensions.Implementation.Types
 {
-    public interface IExp {};
-
-    public class Const : IExp
-    {
-        public double Value { get; }
-
-        public Const(double value) =>
-            Value = value;
-    }
-
     public class Add : IExp
     {
         public IExp Left { get; }
