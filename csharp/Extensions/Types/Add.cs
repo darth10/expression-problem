@@ -1,11 +1,13 @@
-﻿namespace Extensions.Types
-{
-    public class Add : IExp
-    {
-        public IExp Left { get; }
-        public IExp Right { get; }
+﻿using Extensions.Operations;
 
-        public Add(IExp left, IExp right) =>
+namespace Extensions.Types
+{
+    public class Add : IExpr
+    {
+        public IExpr Left { get; }
+        public IExpr Right { get; }
+
+        public Add(IExpr left, IExpr right) =>
             (Left, Right) = (left, right);
     }
 }

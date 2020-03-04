@@ -1,6 +1,8 @@
-﻿namespace Extensions.Types
+﻿using Extensions.Operations;
+
+namespace Extensions.Types
 {
-    public class Const : IExp
+    public class Const : IExpr
     {
         public double Value { get; }
 

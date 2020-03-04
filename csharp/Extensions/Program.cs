@@ -1,9 +1,10 @@
-﻿using System;
-using Extensions.Types;
+﻿using Extensions.Types;
 using Extensions.MultEval;
+using System;
 
 namespace Extensions
 {
+
     class Program
     {
         // TODO add ViewExtensions
