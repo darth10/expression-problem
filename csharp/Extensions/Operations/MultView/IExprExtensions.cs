@@ -1,7 +1,6 @@
-using Extensions.Operations;
 using Extensions.Types;
 
-namespace Extensions.MultView
+namespace Extensions.Operations.MultView
 {
     // Cannot exist in same namespace as Extensions.View.IExprExtensions.
     // Also, if (new Add(...)).View() is invoked with using this namespace,
@@ -10,7 +9,7 @@ namespace Extensions.MultView
     {
         public static string View(this IExpr e) => e switch {
             Mult m => $"({m.Left.View()} * {m.Right.View()})",
-            _ => Extensions.View.IExprExtensions.View(e)
+            _ => Operations.View.IExprExtensions.View(e)
         };
     }
 }

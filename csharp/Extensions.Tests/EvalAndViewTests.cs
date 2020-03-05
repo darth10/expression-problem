@@ -1,7 +1,7 @@
 using System;
-using Extensions.MultEval;
-using Extensions.MultView;
 using Extensions.Operations;
+using Extensions.Operations.MultEval;
+using Extensions.Operations.MultView;
 using Extensions.Types;
 using Xunit;
 

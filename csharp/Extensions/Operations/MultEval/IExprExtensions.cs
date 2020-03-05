@@ -1,7 +1,6 @@
-using Extensions.Operations;
 using Extensions.Types;
 
-namespace Extensions.MultEval
+namespace Extensions.Operations.MultEval
 {
     // Cannot exist in same namespace as Extensions.Eval.IExprExtensions.
     // Also, if (new Add(...)).Eval() is invoked with using this namespace,
@@ -10,7 +9,7 @@ namespace Extensions.MultEval
     {
         public static double Eval(this IExpr e) => e switch {
             Mult m => m.Left.Eval() * m.Right.Eval(),
-            _ => Extensions.Eval.IExprExtensions.Eval(e)
+            _ => Operations.Eval.IExprExtensions.Eval(e)
         };
     }
 }

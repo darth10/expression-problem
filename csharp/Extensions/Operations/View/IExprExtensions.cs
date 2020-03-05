@@ -1,8 +1,7 @@
-using Extensions.Operations;
 using Extensions.Types;
 using System;
 
-namespace Extensions.View
+namespace Extensions.Operations.View
 {
     public static class IExprExtensions
     {
