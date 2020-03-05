@@ -1,0 +1,6 @@
+# stack.yaml is used for circle-ci tests. Profiling build fails on circleci
+# with GHC 8.6, so we build with 8.4 for now.
+
+resolver: lts-12.26
+ghc-options:
+  ExpressionProblem: -O2 -Werror -Wall
