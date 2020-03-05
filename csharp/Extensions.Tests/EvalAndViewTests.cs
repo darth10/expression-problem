@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Extensions.Tests
 {
-    public class EvalTests
+    public class EvalAndViewTests
     {
         [Fact]
         public void EvalTest1()
