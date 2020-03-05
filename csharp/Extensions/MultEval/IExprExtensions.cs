@@ -3,7 +3,7 @@ using Extensions.Types;
 
 namespace Extensions.MultEval
 {
-    // Cannot exist in same namespace.
+    // Cannot exist in same namespace as Extensions.Eval.IExprExtensions.
     // Also, if (new Add(...)).Eval() is invoked with using this namespace,
     // it will fail if any objects in left/right are type Mult.
     public static class IExprExtensions
