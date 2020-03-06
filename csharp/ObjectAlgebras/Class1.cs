@@ -18,6 +18,7 @@ namespace ObjectAlgebras
     public class ConstEval : IEval
     {
         readonly double _value;
+
         public ConstEval(double value) =>
             _value = value;
 
@@ -27,6 +28,7 @@ namespace ObjectAlgebras
     public class AddEval : IEval
     {
         readonly IEval _left, _right;
+
         public AddEval(IEval left, IEval right) =>
             (_left, _right) = (left, right);
 
@@ -54,6 +56,7 @@ namespace ObjectAlgebras
     public class MultEval : IEval
     {
         readonly IEval _left, _right;
+
         public MultEval(IEval left, IEval right) =>
             (_left, _right) = (left, right);
 
@@ -77,6 +80,7 @@ namespace ObjectAlgebras
     public class ConstView : IView
     {
         readonly double _value;
+
         public ConstView(double value) =>
             _value = value;
 
@@ -87,6 +91,7 @@ namespace ObjectAlgebras
     public class AddView : IView
     {
         readonly IView _left, _right;
+
         public AddView(IView left, IView right) =>
             (_left, _right) = (left, right);
 
@@ -97,6 +102,7 @@ namespace ObjectAlgebras
     public class MultView : IView
     {
         readonly IView _left, _right;
+
         public MultView(IView left, IView right) =>
             (_left, _right) = (left, right);
 
