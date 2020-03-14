@@ -1,8 +1,7 @@
 {-# LANGUAGE DeriveFunctor #-}
 {-# LANGUAGE TypeOperators #-}
 
-module Functors
-  () where
+module Functors (lit, (>+<), (>*<), eval, view) where
 
 import Text.Printf (printf)
 
