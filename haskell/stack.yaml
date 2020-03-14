@@ -2,5 +2,7 @@
 # with GHC 8.6, so we build with 8.4 for now.
 
 resolver: lts-12.26
+extra-deps:
+- HUnit-1.6.0.0
 ghc-options:
-  ExpressionProblem: -O2 -Werror -Wall
+  ExpressionProblem: -O2 -Werror
