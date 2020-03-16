@@ -104,13 +104,6 @@ x3 = lit 2
 --       prevents the constraint '(Eval g0)' from being solved.
 --       Probable fix: use a type annotation to specify what 'g0' should be.
 
--- eval $ (x1 >+< x2) >*< x3       => 20.0
--- eval $ x1 >*< x3 >+< x2 >*< x3  => 20.0
--- eval $ x1 >+< x2 >*< x3         => 13.0
--- eval $ x1 >*< x2 >+< x3         => 23.0
-
--- TODO view examples
-
 getAlgebra x =
   if x < 4 then lit 2.0
   else lit 4 >*< lit 5 >+< lit 6
