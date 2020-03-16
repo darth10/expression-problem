@@ -4,7 +4,6 @@
 **/.vs
 
 haskell/dist
-haskell/*.cabal
 haskell/.cabal-sandbox
 haskell/cabal.sandbox.config
 haskell/hscope.out
