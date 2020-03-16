@@ -35,6 +35,16 @@ instance (Eval f, Eval g) => Eval (f :+: g) where
 eval :: Eval f => ExprF f -> Double
 eval expr = foldExpr evalF expr
 
+-- example
+
+-- type Expr = ExprF (Const :+: Add)
+
+-- lit :: Double -> Expr
+-- lit x = In (Inl (Const x))
+
+-- infixl 6 >+<
+-- (>+<) :: Expr -> Expr -> Expr
+-- x >+< y = In (Inr (Add x y))
 
 -- add operation
 
@@ -66,26 +76,33 @@ instance View Mult where
 
 -- helper functions
 
--- lit :: Double -> ExprF (Const :+: g)
+infixr 7 :+:
+type Expr = ExprF (Const :+: Add :+: Mult)
+
+lit :: Double -> Expr
 lit x = In (Inl (Const x))
 
-
 infixl 6 >+<
--- (>+<) :: ExprF (f :+: (Add :+: g)) ->
---          ExprF (f :+: (Add :+: g)) ->
---          ExprF (f :+: (Add :+: g))
+(>+<) :: Expr -> Expr -> Expr
 x >+< y = In (Inr (Inl (Add x y)))
 
-
 infixl 7 >*<
--- (>*<) :: ExprF (f :+: (g :+: Mult)) ->
---          ExprF (f :+: (g :+: Mult)) ->
---          ExprF (f :+: (g :+: Mult))
+(>*<) :: Expr -> Expr -> Expr
 x >*< y = In (Inr (Inr (Mult x y)))
 
 x1 = lit 7
 x2 = lit 3
 x3 = lit 2
+
+-- > let lit2 x = In (Inl (Const x))
+-- > :t lit2
+-- lit2 :: Double -> ExprF (Const :+: g)
+-- > let x1 = lit2 7
+-- > eval x1
+-- <interactive>:...: error:
+--     * Ambiguous type variable 'g0' arising from a use of 'eval'
+--       prevents the constraint '(Eval g0)' from being solved.
+--       Probable fix: use a type annotation to specify what 'g0' should be.
 
 -- eval $ (x1 >+< x2) >*< x3       => 20.0
 -- eval $ x1 >*< x3 >+< x2 >*< x3  => 20.0
