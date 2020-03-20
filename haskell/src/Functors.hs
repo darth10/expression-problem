@@ -105,7 +105,7 @@ x3 = lit 2
 --       Probable fix: use a type annotation to specify what 'g0' should be.
 
 getAlgebra x =
-  if x < 4 then lit 2.0
+  if x < 10 then lit 2.0
   else lit 4 >*< lit 5 >+< lit 6
 
 -- :t getAlgebra
