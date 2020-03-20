@@ -55,7 +55,7 @@ instance View Const where
   viewF (Const x) = show x
 
 instance View Add where
-  viewF (Add x y) =  printf "(%s + %s)" x y
+  viewF (Add x y) = printf "(%s + %s)" x y
 
 instance (View f, View g) => View (f :+: g) where
   viewF (Inl x) = viewF x
