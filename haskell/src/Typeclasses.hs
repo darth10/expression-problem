@@ -1,7 +1,7 @@
 module Typeclasses
   () where
 
-import Prelude (Double, String, show, (+), (*), ($))
+import Prelude (Double, String, show, (+), (*), (<), ($))
 import Text.Printf (printf)
 
 class Expr t where
@@ -42,5 +42,9 @@ e2 :: (Expr t, MultExpr t) => t
 e2 = mult (const 2)
           (add (const 2)
                (const 3))
+
+getAlgebra x =
+  if x < 10 then const 2
+  else add (const 4) (const 5)
 
 -- TODO tests

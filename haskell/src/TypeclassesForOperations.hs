@@ -43,6 +43,9 @@ instance (Eval x, Eval y) => Eval (Mult x y) where
 instance (View x, View y) => View (Mult x y) where
   view (Mult x y) = printf "(%s * %s)" (view x) (view y)
 
+-- e1 :: Expr t => t
+-- e1 = Add (Const 4) (Const 5)    -- fails compilation
+
 -- getAlgebra x =
 --   if x < 10 then Const 2
 --   else Add (Const 4) (Const 5)
