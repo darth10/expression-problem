@@ -5,19 +5,15 @@ module Functors (lit, (>+<), (>*<), eval, view) where
 
 import Text.Printf (printf)
 
-data (f :+: g) e = Inl (f e) | Inr (g e)
-
-data ExprF f = In (f (ExprF f))
-
 data Const e = Const Double deriving Functor
 data Add e = Add e e deriving Functor
 
-instance (Functor f, Functor g) => Functor (f :+: g) where
-  fmap f (Inl e1) = Inl (fmap f e1)
-  fmap f (Inr e2) = Inr (fmap f e2)
+data ExprF f = In (f (ExprF f))
 
 foldExpr :: Functor f => (f a -> a) -> ExprF f -> a
 foldExpr f (In t) = f (fmap (foldExpr f) t)
+
+data (f :+: g) e = Inl (f e) | Inr (g e) deriving Functor
 
 class Functor f => Eval f where
   evalF :: f Double -> Double
