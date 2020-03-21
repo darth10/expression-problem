@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f73f130760991bfea2b809a383d3447dde8c496a64a901f023b44d4483c79e05
+-- hash: f983e9be0a7227e33d5b25d3e2289ceac26d8c00bb62c89a0b42c21b827f49a2
 
 name:           ExpressionProblem
 version:        0.1.0.0
@@ -24,7 +24,6 @@ source-repository head
 library
   exposed-modules:
       Functors
-      Lib
       Typeclasses
       TypeclassesForOperations
   other-modules:
