@@ -1,12 +1,13 @@
 module FunctorsTests
   (tests) where
 
-import Test.HUnit
 import Functors
+import Prelude ()
+import Test.HUnit
 
-c1 = lit 7
-c2 = lit 2
-c3 = lit 3
+c1 = const 7
+c2 = const 2
+c3 = const 3
 
 addExpr1 = c1 >+< c2
 

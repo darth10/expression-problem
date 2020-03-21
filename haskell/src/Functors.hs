@@ -1,8 +1,9 @@
 {-# LANGUAGE DeriveFunctor #-}
 {-# LANGUAGE TypeOperators #-}
 
-module Functors (lit, (>+<), (>*<), eval, view) where
+module Functors (const, (>+<), (>*<), eval, view) where
 
+import Prelude (Double, Functor, String, fmap, show, (+), (*), (<))
 import Text.Printf (printf)
 
 data Const e = Const Double deriving Functor
@@ -35,8 +36,8 @@ eval expr = foldExpr evalF expr
 
 -- type Expr = ExprF (Const :+: Add)
 
--- lit :: Double -> Expr
--- lit x = In (Inl (Const x))
+-- const :: Double -> Expr
+-- const x = In (Inl (Const x))
 
 -- infixl 6 >+<
 -- (>+<) :: Expr -> Expr -> Expr
@@ -75,8 +76,8 @@ instance View Mult where
 infixr 7 :+:
 type Expr = ExprF (Const :+: Add :+: Mult)
 
-lit :: Double -> Expr
-lit x = In (Inl (Const x))
+const :: Double -> Expr
+const x = In (Inl (Const x))
 
 infixl 6 >+<
 (>+<) :: Expr -> Expr -> Expr
@@ -86,14 +87,14 @@ infixl 7 >*<
 (>*<) :: Expr -> Expr -> Expr
 x >*< y = In (Inr (Inr (Mult x y)))
 
-x1 = lit 7
-x2 = lit 3
-x3 = lit 2
+x1 = const 7
+x2 = const 3
+x3 = const 2
 
--- > let lit2 x = In (Inl (Const x))
--- > :t lit2
--- lit2 :: Double -> ExprF (Const :+: g)
--- > let x1 = lit2 7
+-- > let const2 x = In (Inl (Const x))
+-- > :t const2
+-- const2 :: Double -> ExprF (Const :+: g)
+-- > let x1 = const2 7
 -- > eval x1
 -- <interactive>:...: error:
 --     * Ambiguous type variable 'g0' arising from a use of 'eval'
@@ -101,8 +102,8 @@ x3 = lit 2
 --       Probable fix: use a type annotation to specify what 'g0' should be.
 
 getAlgebra x =
-  if x < 10 then lit 2.0
-  else lit 4 >*< lit 5 >+< lit 6
+  if x < 10 then const 2.0
+  else const 4 >*< const 5 >+< const 6
 
 -- :t getAlgebra
 -- getAlgebra
