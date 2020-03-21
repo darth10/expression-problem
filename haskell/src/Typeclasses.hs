@@ -14,7 +14,7 @@ instance Expr Eval where
     const   = Eval
     add x y = Eval $ eval x + eval y
 
-e1 :: Expr r => r
+e1 :: Expr t => t
 e1 = add (const 1)
          (add (const 2)
               (const 3))
@@ -29,7 +29,7 @@ instance Expr View where
 
 -- add type/variant
 
-class Expr t => MultExpr t where
+class MultExpr t where
     mult :: t -> t -> t
 
 instance MultExpr Eval where
@@ -38,7 +38,7 @@ instance MultExpr Eval where
 instance MultExpr View where
     mult x y = View $ printf "(%s * %s)" (view x) (view y)
 
-e2 :: MultExpr r => r
+e2 :: (Expr t, MultExpr t) => t
 e2 = mult (const 2)
           (add (const 2)
                (const 3))
