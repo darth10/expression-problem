@@ -11,7 +11,7 @@ class Expr t where
 newtype Eval = Eval { eval :: Double }
 
 instance Expr Eval where
-    const   = Eval
+    const n = Eval n
     add x y = Eval $ eval x + eval y
 
 e1 :: Expr t => t
