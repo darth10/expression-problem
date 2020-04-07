@@ -46,9 +46,9 @@ instance (View x, View y) => View (Mult x y) where
 -- e1 :: Expr t => t
 -- e1 = Add (Const 4) (Const 5)    -- fails compilation
 
--- getAlgebra x =
---   if x < 10 then Const 2
---   else Add (Const 4) (Const 5)
+-- getAlgebra x
+--   | x < 10    = Const 2
+--   | otherwise = Add (Const 4) (Const 5)
 
 -- produces an error:
 --

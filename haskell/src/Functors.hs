@@ -3,7 +3,7 @@
 
 module Functors (const, (>+<), (>*<), eval, view) where
 
-import Prelude (Double, Functor, String, fmap, show, (+), (*), (<))
+import Prelude (Double, Functor, String, fmap, otherwise, show, (+), (*), (<))
 import Text.Printf (printf)
 
 data Const e = Const Double deriving Functor
@@ -101,9 +101,9 @@ x3 = const 2
 --       prevents the constraint '(Eval g0)' from being solved.
 --       Probable fix: use a type annotation to specify what 'g0' should be.
 
-getAlgebra x =
-  if x < 10 then const 2.0
-  else const 4 >*< const 5 >+< const 6
+getAlgebra x
+  | x < 10    = const 2.0
+  | otherwise = const 4 >*< const 5 >+< const 6
 
 -- :t getAlgebra
 -- getAlgebra
