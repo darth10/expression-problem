@@ -1,5 +1,5 @@
 module Typeclasses
-  () where
+  (Expr, MultExpr, const, add, mult, eval, view) where
 
 import Prelude (Double, String, show, (+), (*), (<), ($), otherwise)
 import Text.Printf (printf)
@@ -51,5 +51,3 @@ getAlgebra x
 -- "(4.0 + 5.0)"
 -- > view $ getAlgebra 2
 -- "2.0"
-
--- TODO tests

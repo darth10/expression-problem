@@ -39,6 +39,7 @@ test-suite ExpressionProblem-test
   main-is: Spec.hs
   other-modules:
       FunctorsTests
+      TypeclassesTests
       Paths_ExpressionProblem
   hs-source-dirs:
       test

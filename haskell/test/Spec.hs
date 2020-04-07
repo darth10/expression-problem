@@ -1,6 +1,10 @@
-
-import FunctorsTests (tests)
+import qualified FunctorsTests
+import qualified TypeclassesTests
 import Test.HUnit
 
 main :: IO Counts
-main = runTestTT tests
+main =
+  runTestTT $ TestList [
+    FunctorsTests.tests
+  , TypeclassesTests.tests
+  ]

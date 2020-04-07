@@ -55,5 +55,3 @@ instance (View x, View y) => View (Mult x y) where
 -- * Couldn't match expected type ‘Const’
 --               with actual type ‘Add Const Const’
 -- * In the expression: (Add (Const 4) (Const 5))
-
--- TODO examples/tests
