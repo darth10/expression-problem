@@ -3,7 +3,7 @@
 
 module Functors (const, (>+<), (>*<), eval, view) where
 
-import Prelude (Double, Functor, String, fmap, otherwise, show, (+), (*), (<), ($))
+import Prelude (Double, Functor, String, fmap, otherwise, show, (+), (*), (<))
 import Text.Printf (printf)
 
 data Const e = Const Double deriving Functor
