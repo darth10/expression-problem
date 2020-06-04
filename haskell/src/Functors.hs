@@ -32,7 +32,7 @@ instance (Eval f, Eval g) => Eval (f :+: g) where
   evalF (Inr y) = evalF y
 
 eval :: Eval f => ExprF f -> Double
-eval expr = foldExpr evalF expr
+eval = foldExpr evalF
 
 -- example
 
@@ -62,7 +62,7 @@ instance (View f, View g) => View (f :+: g) where
   viewF (Inr y) = viewF y
 
 view :: View f => ExprF f -> String
-view expr = foldExpr viewF expr
+view = foldExpr viewF
 
 -- add type/variant
 
