@@ -16,3 +16,4 @@ haskell/.stack-work*
 *#*
 .#*
 /haskell/TAGS
+/.direnv/
